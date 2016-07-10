@@ -1,0 +1,102 @@
+
+body {
+  background-color: #FFF7CF;
+
+}
+
+header {
+  position: relative;
+  display: block;
+  height: 15em;
+  margin: 0 auto;
+  background-color: #FFF7CF;
+  border: 5px solid #FFEE95;
+}
+
+#greeting {
+  position: absolute;
+  text-align: center;
+  margin: auto;
+  width: 75%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+}
+
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+
+
+}
+
+div {
+  position: absolute;
+  height: 250px;
+  background-color: #9393B2;
+  margin: 5px;
+}
+
+#score1 {
+  display: inline-block;
+  width: 30%;
+  margin-left: 1%;
+  text-align: center;
+  font-size: 50px;
+
+}
+
+#question {
+  display: inline-block;
+  width: 36%;
+  margin-left: 32%;
+}
+
+#score2{
+  display: inline-block;
+  width: 30%;
+  margin-left: 69%;
+  text-align: center;
+  font-size: 50px;
+}
+
+.clear {
+  clear: both;
+}
+
+footer {
+  display: block;
+  height: 11em;
+  margin: 0 auto;
+  background-color: #C2BEFF;
+  border: 5px solid #FFF7CF;
+  margin-top: 21%;
+
+}
+
+.answer {
+  display: inline-block;
+  position: relative;
+  background-color: #9393B2;
+  width: 49%;
+  height: 150px;
+  font-size: 70px;
+  margin-top: 10px;
+}
+
+#true {
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+
+#false {
+  text-align: center;
+  vertical-align: middle;
+
+}
