@@ -1,7 +1,8 @@
 console.log('hello world');
 
-var playerOneMoves = [];
-var playerTwoMoves = [];
+var turn = 0;
+var playerOneScore = 0;
+var playerTwoScore = 0;
 
 var quizQuestions = [
 
@@ -23,8 +24,29 @@ var quizQuestions = [
 ['Einstein failed math', 1, 'He failed an entrance exam but still exelled in math']
 ];
 
+/*startbutton pushed, generate random question, push question [x][0] into startbutton*/
 
-/* TTT for reference var turn = 0;
+var $startButton = $('#greeting');
+$startButton.click(function() {
+  console.log('hello world');
+  var $selectedArray = $('quizQuestions[Math.floor((Math.random() * 16) + 1)]');
+  var $question = $('selectedArray[0]');
+  var $answer = $('selectedArray[1]');
+  var $explain = $('selectedArray[2]');
+  /*var $question = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][0]');
+  var $answer = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][1]');
+  var $explain = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][2]');*/
+  $('#greeting').html('$question');
+
+
+
+});
+
+
+
+
+/* TTT for reference
+var turn = 0;
 var playerXmoves =[];
 var playerOmoves = [];
 
