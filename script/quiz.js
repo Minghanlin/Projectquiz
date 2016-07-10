@@ -1,3 +1,29 @@
+console.log('hello world');
+
+var playerOneMoves = [];
+var playerTwoMoves = [];
+
+var quizQuestions = [
+
+['North Korean and Finland are seperated by one country', 0, 'Russia separates North Korea and Finland'],
+['It rains acid on Jupiter', 1, 'It rains diamonds!'],
+['It is possible for a professional mimic to forget his voice', 0, 'Talk about occupational hazard'],
+['If you could fold a paper in half 35 times it would reach the moon', 1, 'You actually need to fold it 42 times'],
+['A speck of dust is roughly halfway in size between an atom and the planet Earth', 0, 'Wow'],
+['Elvis once entered an Elvis look-alike contest and lost', 1, 'It happened to Charlie Chaplin though'],
+['Mammoths were alive when the Great Pyramid was being built', 0, 'How else did they move those big stones?'],
+['Napoleon was short', 1, 'He was actually slightly above average at the time'],
+['Lobsters are immortal', 0, 'They do not die of old age. They grow in size until an outside force kills them'],
+['Only 10% of the brain is used', 1, 'Every region of the brain is used almost every day'],
+['Small creatures experience time faster than we do', 0, 'We appear to be moving in slow motion to them'],
+['Your hair and nails keep growing even after death', 1, 'The receding of skin tissues make them appear longer'],
+['The color of the Universe is named cosmic latte', 0, 'Its RGB value is #FFF8E7'],
+['Goldfish has a memory span of 3 seconds', 1, 'They boast a memory span fo 3 months'],
+['Squirrels have been trained and acted as spies', 0, 'Iranian Intelligence once detained squirrels for spying on their nuclear plant'],
+['Einstein failed math', 1, 'He failed an entrance exam but still exelled in math']
+];
+
+
 /* TTT for reference var turn = 0;
 var playerXmoves =[];
 var playerOmoves = [];
