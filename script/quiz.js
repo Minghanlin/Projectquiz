@@ -41,24 +41,25 @@ $( document ).ready(function() {
   function gamePlay() {
     console.log('hello world');
     // var $selectedArray = quizQuestions[Math.floor((Math.random() * 16) + 1)];
-    random = [Math.floor((Math.random() * 16) + 1)];
+    random = [Math.floor((Math.random() * quizQuestions.length) + 1)];
     $question = quizQuestions[random][0];
     $answer = quizQuestions[random][1];
     $explain = quizQuestions[random][2];
-    /*var $question = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][0]');
-    var $answer = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][1]');
-    var $explain = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][2]');*/
     $startButton.html($question);
     turn++;
+    // quizQuestions.splice(quizQuestions.indexOf(random),1);
+
   }
 
   function checkWin() {
     if(playerOneScore === 5) {
-      $('#greeting').html('Player One Wins');
-      $startButton.off("click");
+      $('#greeting').html('Player One Wins. Click to restart.');
+      // $startButton.off("click");
     } else if(playerTwoScore === 5) {
-      $('#greeting').html('Player Two Wins');
-      $startButton.off("click");
+      $('#greeting').html('Player Two Wins. Click to restart.');
+      // $startButton.off("click");
+    } else {
+      setTimeout(gamePlay, 1000);
     }
 
 
@@ -71,20 +72,16 @@ $( document ).ready(function() {
         checkWin();
         $('#score1').html(playerOneScore);
         $('#explanation').html($explain);
-        setTimeout(gamePlay, 1000);
       } else if (turn % 2 !== 0 && $answer === 1) {
         $('#explanation').html($explain);
-        setTimeout(gamePlay, 1000);
       // player 2
       } else if(turn % 2 === 0 && $answer === 0) {
         playerTwoScore++;
         checkWin();
         $('#score2').html(playerTwoScore);
         $('#explanation').html($explain);
-        setTimeout(gamePlay, 1000);
       } else if (turn % 2 === 0 && $answer === 1) {
         $('#explanation').html($explain);
-        setTimeout(gamePlay, 1000);
     }
   });
 
@@ -96,19 +93,19 @@ $( document ).ready(function() {
       checkWin();
       $('#score1').html(playerOneScore);
       $('#explanation').html($explain);
-      setTimeout(gamePlay, 1000);
+
     } else if ((turn % 2 !== 0) && $answer === 0) {
       $('#explanation').html($explain);
-      setTimeout(gamePlay, 1000);
+
     } else if(turn % 2 === 0 && $answer === 1) {
       playerTwoScore++;
       checkWin();
       $('#score2').html(playerTwoScore);
       $('#explanation').html($explain);
-      setTimeout(gamePlay, 1000);
+
     } else if ((turn % 2 === 0) && $answer === 0) {
       $('#explanation').html($explain);
-      setTimeout(gamePlay, 1000);
+
   }
 
   /* If click true, if user one, if answer true, add point to user one,
@@ -123,6 +120,6 @@ $( document ).ready(function() {
 
 
 // End of Document Ready
-}); gamePlay();
+});
 
 });
