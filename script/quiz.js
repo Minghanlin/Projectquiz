@@ -46,8 +46,7 @@ $( document ).ready(function() {
     $answer = quizQuestions[random][1];
     $explain = quizQuestions[random][2];
     $startButton.html($question);
-    turn++;
-    // quizQuestions.splice(quizQuestions.indexOf(random),1);
+    quizQuestions.splice(quizQuestions.indexOf(random),1);
 
   }
 
@@ -60,6 +59,7 @@ $( document ).ready(function() {
       // $startButton.off("click");
     } else {
       setTimeout(gamePlay, 1000);
+      turn++;
     }
 
 
@@ -73,6 +73,7 @@ $( document ).ready(function() {
         $('#score1').html(playerOneScore);
         $('#explanation').html($explain);
       } else if (turn % 2 !== 0 && $answer === 1) {
+        checkWin();
         $('#explanation').html($explain);
       // player 2
       } else if(turn % 2 === 0 && $answer === 0) {
@@ -81,6 +82,7 @@ $( document ).ready(function() {
         $('#score2').html(playerTwoScore);
         $('#explanation').html($explain);
       } else if (turn % 2 === 0 && $answer === 1) {
+        checkWin();
         $('#explanation').html($explain);
     }
   });
@@ -95,6 +97,7 @@ $( document ).ready(function() {
       $('#explanation').html($explain);
 
     } else if ((turn % 2 !== 0) && $answer === 0) {
+      checkWin();
       $('#explanation').html($explain);
 
     } else if(turn % 2 === 0 && $answer === 1) {
@@ -104,15 +107,12 @@ $( document ).ready(function() {
       $('#explanation').html($explain);
 
     } else if ((turn % 2 === 0) && $answer === 0) {
+      checkWin();
       $('#explanation').html($explain);
 
   }
 
-  /* If click true, if user one, if answer true, add point to user one,
-  if click true, if user two, if answer true, add point to user two, display explanation */
 
-  /* If click false, if user one, if answer false, add point to user one,
-  if click false, if user two, if answer false, add point to user two, display explanation */
 
 
 
