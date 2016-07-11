@@ -35,7 +35,10 @@ $( document ).ready(function() {
   /*startbutton pushed, generate random question, push question [x][0] into startbutton*/
 
   var $startButton = $('#greeting');
-  $startButton.click(function() {
+  $startButton.click(gamePlay);
+
+
+  function gamePlay() {
     console.log('hello world');
     // var $selectedArray = quizQuestions[Math.floor((Math.random() * 16) + 1)];
     random = [Math.floor((Math.random() * 16) + 1)];
@@ -47,11 +50,9 @@ $( document ).ready(function() {
     var $explain = $('quizQuestions[Math.floor((Math.random() * 16) + 1)][2]');*/
     $startButton.html($question);
     turn++;
-  });
+  }
 
   function checkWin() {
-    console.log(playerOneScore);
-    console.log("yay");
     if(playerOneScore === 5) {
       $('#greeting').html('Player One Wins');
       $startButton.off("click");
@@ -63,38 +64,52 @@ $( document ).ready(function() {
 
   }
   var $trueButton = $('#true');
-  $trueButton.click(  function() {
+  $trueButton.click(function() {
       // player 1
-      if((turn % 2 !== 0) && $answer === 0) {
+      if(turn % 2 !== 0 && $answer === 0) {
         playerOneScore++;
         checkWin();
         $('#score1').html(playerOneScore);
         $('#explanation').html($explain);
+        setTimeout(gamePlay, 1000);
+      } else if (turn % 2 !== 0 && $answer === 1) {
+        $('#explanation').html($explain);
+        setTimeout(gamePlay, 1000);
       // player 2
-      } else if((turn % 2 === 0) && $answer === 0) {
+      } else if(turn % 2 === 0 && $answer === 0) {
         playerTwoScore++;
         checkWin();
         $('#score2').html(playerTwoScore);
         $('#explanation').html($explain);
-      }
-    });
+        setTimeout(gamePlay, 1000);
+      } else if (turn % 2 === 0 && $answer === 1) {
+        $('#explanation').html($explain);
+        setTimeout(gamePlay, 1000);
+    }
+  });
 
 
   var $falseButton = $('#false');
   $falseButton.click(function() {
-    if((turn % 2 !== 0) && $answer === 1) {
+    if(turn % 2 !== 0 && $answer === 1) {
       playerOneScore++;
       checkWin();
       $('#score1').html(playerOneScore);
       $('#explanation').html($explain);
-
-    } else if((turn % 2 === 0) && $answer === 1) {
+      setTimeout(gamePlay, 1000);
+    } else if ((turn % 2 !== 0) && $answer === 0) {
+      $('#explanation').html($explain);
+      setTimeout(gamePlay, 1000);
+    } else if(turn % 2 === 0 && $answer === 1) {
       playerTwoScore++;
       checkWin();
       $('#score2').html(playerTwoScore);
       $('#explanation').html($explain);
-    }
-  });
+      setTimeout(gamePlay, 1000);
+    } else if ((turn % 2 === 0) && $answer === 0) {
+      $('#explanation').html($explain);
+      setTimeout(gamePlay, 1000);
+  }
 
   /* If click true, if user one, if answer true, add point to user one,
   if click true, if user two, if answer true, add point to user two, display explanation */
@@ -108,4 +123,6 @@ $( document ).ready(function() {
 
 
 // End of Document Ready
+}); gamePlay();
+
 });
