@@ -1,6 +1,6 @@
 
 body {
-  background-color: #FFF7CF;
+  background-color: #3066BE;
 
 }
 
@@ -9,8 +9,8 @@ header {
   display: block;
   height: 15em;
   margin: 0 auto;
-  background-color: #FFF7CF;
-  border: 5px solid #FFEE95;
+  background-color: #3066BE;
+  border: 5px solid #80DED9;
 }
 
 #greeting {
@@ -23,6 +23,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 45px;
+  border: 5px solid #AEECEF;
 }
 
 main {
@@ -32,12 +33,13 @@ main {
 
 
 
+
 }
 
 div {
   position: absolute;
   height: 250px;
-  background-color: #9393B2;
+  background-color: #6D9DC5;
   margin: 5px;
 }
 
@@ -54,6 +56,7 @@ div {
   display: inline-block;
   width: 36%;
   margin-left: 32%;
+  font-size: 45px;
 }
 
 #score2{
@@ -72,8 +75,8 @@ footer {
   display: block;
   height: 11em;
   margin: 0 auto;
-  background-color: #C2BEFF;
-  border: 5px solid #FFF7CF;
+  background-color: #3066BE;
+  border: 5px solid #80DED9;
   margin-top: 21%;
 
 }
@@ -81,7 +84,7 @@ footer {
 .answer {
   display: inline-block;
   position: relative;
-  background-color: #9393B2;
+  background-color: #6D9DC5;
   width: 49%;
   height: 150px;
   font-size: 70px;
