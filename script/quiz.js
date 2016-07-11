@@ -41,25 +41,25 @@ $( document ).ready(function() {
   function gamePlay() {
     console.log('hello world');
     // var $selectedArray = quizQuestions[Math.floor((Math.random() * 16) + 1)];
+    turn++;
     random = [Math.floor((Math.random() * quizQuestions.length) + 1)];
     $question = quizQuestions[random][0];
     $answer = quizQuestions[random][1];
     $explain = quizQuestions[random][2];
     $startButton.html($question);
-    quizQuestions.splice(quizQuestions.indexOf(random),1);
+    quizQuestions.splice(quizQuestions.indexOf(random));
 
   }
 
   function checkWin() {
     if(playerOneScore === 5) {
-      $('#greeting').html('Player One Wins. Click to restart.');
+      $('#greeting').html('Player One Wins. Click to continue.');
       // $startButton.off("click");
     } else if(playerTwoScore === 5) {
-      $('#greeting').html('Player Two Wins. Click to restart.');
+      $('#greeting').html('Player Two Wins. Click to continue.');
       // $startButton.off("click");
     } else {
       setTimeout(gamePlay, 1000);
-      turn++;
     }
 
 
