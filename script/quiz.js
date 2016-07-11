@@ -53,10 +53,16 @@ $( document ).ready(function() {
 
   function checkWin() {
     if(playerOneScore === 5) {
-      $('#greeting').html('Player One Wins. Click to continue.');
+      $('#greeting').html('Player One Wins. Click to restart.');
+      $('#greeting').click(function() {
+    location.reload();
+    });
       // $startButton.off("click");
     } else if(playerTwoScore === 5) {
-      $('#greeting').html('Player Two Wins. Click to continue.');
+      $('#greeting').html('Player Two Wins. Click to restart.');
+      $('#greeting').click(function() {
+    location.reload();
+    });
       // $startButton.off("click");
     } else {
       setTimeout(gamePlay, 1000);
