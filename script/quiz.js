@@ -18,7 +18,7 @@ $( document ).ready(function() {
   ['It rains acid on Jupiter', 1, 'It rains diamonds!'],
   ['It is possible for a professional mimic to forget his voice', 0, 'Talk about occupational hazard'],
   ['If you could fold a paper in half 35 times it would reach the moon', 1, 'You actually need to fold it 42 times'],
-  ['A speck of dust is roughly halfway in size between an atom and the planet Earth', 0, 'Wow'],
+  ['A speck of dust is roughly halfway in size between an atom and the planet Earth', 0, 'Atoms are really really small'],
   ['Elvis once entered an Elvis look-alike contest and lost', 1, 'It happened to Charlie Chaplin though'],
   ['Mammoths were alive when the Great Pyramid was being built', 0, 'How else did they move those big stones?'],
   ['Napoleon was short', 1, 'He was actually slightly above average at the time'],
@@ -47,7 +47,7 @@ $( document ).ready(function() {
     $answer = quizQuestions[random][1];
     $explain = quizQuestions[random][2];
     $startButton.html($question);
-    quizQuestions.splice(quizQuestions.indexOf(random));
+    // quizQuestions.splice(random, 1);
 
   }
 
