@@ -42,12 +42,12 @@ $( document ).ready(function() {
     console.log('hello world');
     // var $selectedArray = quizQuestions[Math.floor((Math.random() * 16) + 1)];
     turn++;
-    random = [Math.floor((Math.random() * quizQuestions.length) + 1)];
+    random = [Math.floor((Math.random() * quizQuestions.length))];
     $question = quizQuestions[random][0];
     $answer = quizQuestions[random][1];
     $explain = quizQuestions[random][2];
     $startButton.html($question);
-    // quizQuestions.splice(random, 1);
+    quizQuestions.splice(random, 1);
 
   }
 
